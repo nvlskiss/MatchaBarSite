@@ -1,0 +1,496 @@
+:root {
+    --bg-color: #f1f6ed;
+    --text-color: #2b3a1a;
+    --primary-color: #556b2f; /* Dark Olive Green */
+    --accent-color: #8fbc8f; /* Dark Sea Green */
+    --card-bg: #ffffff;
+    --border-color: #2b3a1a;
+    --font-heading: 'Bebas Neue', cursive;
+    --font-body: 'Space Mono', monospace;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a2211;
+    --text-color: #f1f6ed;
+    --primary-color: #8fbc8f;
+    --accent-color: #556b2f;
+    --card-bg: #2b3a1a;
+    --border-color: #8fbc8f;
+}
+
+/* --- Base Styling --- */
+* { /* Fixed typo here from '-' to '*' */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling for header links */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 1.5rem;
+    border-bottom: 5px solid var(--border-color);
+    position: sticky; /* Optional polish: keeps nav at top while scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* --- Header --- */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.image-container {
+    position: relative; /* Needed for absolute positioning inside */
+    width: 100%;       /* fixed rectangle width */
+    height: 600px;      /* fixed rectangle height */
+    overflow: hidden;   /* hide overflow parts */
+    margin-bottom: 2rem;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* fill area, crop overflow */
+    object-position: center; /* center the crop */
+    display: block;
+}
+
+.shop-button {
+    position: absolute;
+    bottom: 40px;
+    right: 80px; 
+    background-color: white;
+    color: black;
+    padding: 14px 56px; /* Bigger size */
+    border: none;
+    border-radius: 18px;
+    font-size: 20px; /* Bigger text */
+    cursor: pointer;
+    transition: opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none; /* Polish for anchor tag styling */
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+.shop-button:hover {
+    opacity: 1;
+    background-color: #556b2f;
+    color: white;
+}
+
+/* --- Header Buttons (Home, Products, etc.) --- */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--bg-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    border: 2px solid var(--bg-color);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Buttons --- */
+.btn {
+    background-color: var(--accent-color);
+    color: #1a2211;
+    border: 3px solid var(--border-color);
+    padding: 10px 15px;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--border-color);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 var(--border-color);
+}
+
+.link-btn {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+/* --- Main Layout & Sections --- */
+
+.card {
+    max-width: 1500px;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+}
+
+/* Products Landing Page */
+.product-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f3f1ec; 
+    font-family: 'Arial', sans-serif;
+    scroll-margin-top: 80px; /* Prevents sticky header from covering title */
+}
+
+.section-title {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 650px; 
+    margin: 0 auto;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Polish hover effect */
+}
+
+.product-image {
+    background-color: #e9e9e9; 
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image img {
+    max-height: 90%;
+    max-width: 90%;
+    object-fit: contain;
+}
+
+/* The solid green text block */
+.product-info {
+    background-color: #4a8b5e; /* Match the shade of green */
+    color: white;
+    padding: 15px 10px;
+}
+
+.product-info h3 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.product-info p {
+    margin: 4px 0 8px;
+    font-size: 11px;
+}
+
+.stars {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+/* --- Guarantee Section (Green Banner) --- */
+.guarantee-section {
+    background-color: #37965f; /* Solid green background from the design */
+    color: white;              /* White text for the whole section */
+    padding: 50px 20px;
+    scroll-margin-top: 80px;
+}
+
+.guarantee-section .section-title {
+    color: white; 
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+}
+
+/* --- About Section (Images & Lists) --- */
+.profile-pic {
+    width: 70px;               /* Scaled down from 150px to match the image proportions */
+    height: 70px;
+    border-radius: 50%;        /* Makes it circular */
+    object-fit: cover;         /* Ensures image fills without stretching */
+    object-position: center;   /* Centers the image */
+    border: none;              /* Removed border to match mockup */
+    display: block;
+    margin: 0 auto 15px auto;  /* Centers the image horizontally in the column */
+}
+
+/* --- ABOUT US SECTION (Beige Background) --- */
+.about-section {
+    background-color: #f3f1ec; /* Beige background */
+    padding: 60px 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+    scroll-margin-top: 80px;
+}
+
+.about-header {
+    margin-bottom: 40px;
+}
+
+.about-header h2 {
+    font-size: 2rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about-header .subtitle {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-image-wrapper {
+    flex: 1;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 350px;
+    border: 8px solid #37965f; /* Thick green border */
+    display: block;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.btn-maps {
+    display: inline-block;
+    background-color: #37965f;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px; /* Pill shape */
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease;
+}
+
+.btn-maps:hover {
+    background-color: #274e37;
+    color: white;
+}
+
+/* --- FOOTER SECTION (Dark Green Background) --- */
+.site-footer {
+    background-color: #274e37; /* Dark green footer background */
+    color: white;
+    padding: 50px 20px 20px 20px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-bottom: 1px solid #4a755b;
+    padding-bottom: 30px;
+}
+
+.footer-col h4 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #8fbc8f;
+}
+
+.brand-col {
+    text-align: right;
+    max-width: 250px;
+}
+
+.brand-col p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.footer-logo {
+    font-weight: bold;
+    border-top: 1px solid white;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.7rem;
+}
+
+/* --- Review Text Styling --- */
+.guarantee-section h3 {
+    font-size: 1rem;
+    font-style: italic;        /* Italicized names */
+    margin-bottom: 10px;
+}
+
+.guarantee-section p {
+    font-size: 0.8rem;
+    text-transform: uppercase; /* Forces text to uppercase like the design */
+    line-height: 1.4;
+}
+
+.bio ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.bio li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Responsive Adjustments for Mobile --- */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .brand-col {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .profile-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .bio ul {
+        list-style-position: inside;
+        margin-left: 0;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .shop-button {
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
