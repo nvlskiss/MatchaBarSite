@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matcha Bar</title>
+    <title>ラブブ—ウベ Matcha</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -15,14 +15,29 @@
             <h1>ラブブ—ウベ Matcha</h1>
             
             <div class="header-controls">
-                <nav>
-                    <!-- Header navigation linked to IDs below -->
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
+                <!-- Header navigation linked to IDs below -->
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#products">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#reviews">Reviews</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">About</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>
@@ -31,9 +46,11 @@
     <main>
         <!-- Added id="home" to target navigation -->
         <div class="image-container" id="home">
-            <img src="matcha.jpg" alt="Example Image">
             <!-- Converted button to anchor tag so it smoothly scrolls to products -->
-            <a href="#products" class="shop-button">Shop Now</a>
+             <div class="d-flex flex-column align-items-end justify-content-end p-3 w-50">
+                <h1 class="text-break text-end mb-2">Make Your Day<br>Matcha Better</h1>
+                <a href="#products" class="shop-button">Shop Now</a>
+            </div>
         </div>
 
         <!-- Added id="products" to target navigation -->
@@ -47,7 +64,7 @@
                         <img src="packs.png" alt="Matcha Tin">
                     </div>
                     <div class="product-info">
-                        <h3>ASIES MATCHA</h3>
+                        <h3>ASHES MATCHA TIN</h3>
                         <p>100% PURE</p>
                         <div class="stars">★★★★★</div>
                     </div>
@@ -55,22 +72,22 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="packs.png" alt="Matcha Tin">
+                        <img src="labubumatcha.png" class="img-fluid" alt="Matcha Tin">
                     </div>
                     <div class="product-info">
-                        <h3>ASIES MATCHA</h3>
-                        <p>100% PURE</p>
+                        <h3>L.A. BUBU MATCHA</h3>
+                        <p>100% ORIGINAL</p>
                         <div class="stars">★★★★★</div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="packs.png" alt="Matcha Tin">
+                        <img src="ubetin.jpg" class="img-fluid" alt="Matcha Tin">
                     </div>
                     <div class="product-info">
-                        <h3>ASIES MATCHA</h3>
-                        <p>100% PURE</p>
+                        <h3>UBE MATCHA TIN</h3>
+                        <p>FOR THE GIRLIES</p>
                         <div class="stars">★★★★★</div>
                     </div>
                 </div>
@@ -78,33 +95,33 @@
                 <!-- Bottom Row -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="packs.png" alt="Matcha Packs">
+                        <img src="matchadrink.png" alt="Matcha Packs">
                     </div>
                     <div class="product-info">
-                        <h3>SERIOUS MATCHA</h3>
-                        <p>FOR PLUS</p>
+                        <h3>MATCHA IN A CAN</h3>
+                        <p>12 PACK FOR 1</p>
                         <div class="stars">★★★★★</div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="packs.png" alt="Matcha Packs">
+                        <img src="matchapack.png" alt="Matcha Packs">
                     </div>
                     <div class="product-info">
                         <h3>SERIOUS MATCHA</h3>
-                        <p>FOR PLUS</p>
+                        <p>REALLY GOOD</p>
                         <div class="stars">★★★★★</div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="packs.png" alt="Matcha Cup">
+                        <img src="matchakit.png" alt="Matcha Cup">
                     </div>
                     <div class="product-info">
-                        <h3>MATCHA EXT</h3>
-                        <p>100% PURE</p>
+                        <h3>MATCHA MAKING KIT</h3>
+                        <p>WHOLE BAMBOO</p>
                         <div class="stars">★★★★★</div>
                     </div>
                 </div>
@@ -200,7 +217,7 @@
         
         <!-- Copyright Bar -->
         <div class="footer-bottom">
-            <p>ラブブ-ウベ Matcha © 2024. PLEASE BUY OUR STUFF</p>
+            <p>ラブブ-ウベ Matcha © 2026. PLEASE BUY OUR STUFF</p>
         </div>
     </footer>
 </body>

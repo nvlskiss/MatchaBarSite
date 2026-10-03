@@ -1,8 +1,8 @@
 :root {
-    --bg-color: #f1f6ed;
+    --bg-color: #F3F0EA;
     --text-color: #2b3a1a;
-    --primary-color: #556b2f; /* Dark Olive Green */
-    --accent-color: #8fbc8f; /* Dark Sea Green */
+    --primary-color: #0F4C3A; /* Dark Olive Green */
+    --accent-color: #7ECF9A; /* Dark Sea Green */
     --card-bg: #ffffff;
     --border-color: #2b3a1a;
     --font-heading: 'Bebas Neue', cursive;
@@ -47,7 +47,6 @@ header {
     background-color: var(--primary-color);
     color: var(--bg-color);
     padding: 1.5rem;
-    border-bottom: 5px solid var(--border-color);
     position: sticky; /* Optional polish: keeps nav at top while scrolling */
     top: 0;
     z-index: 1000;
@@ -71,6 +70,21 @@ header {
     justify-content: center;
 }
 
+.nav-link {
+    font-family: var(--font-heading);
+    color: var(--bg-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+    border-radius: 5px;
+}
+
 header h1 {
     font-size: 2.5rem;
     margin: 0;
@@ -79,17 +93,20 @@ header h1 {
 .image-container {
     position: relative; /* Needed for absolute positioning inside */
     width: 100%;       /* fixed rectangle width */
-    height: 600px;      /* fixed rectangle height */
+    height: 60vh;      /* fixed viewport height */
     overflow: hidden;   /* hide overflow parts */
     margin-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.3) url('matcha.jpg') left no-repeat;
+    background-blend-mode: darken;
+    scroll-margin-top: 120px;
 }
 
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;      /* fill area, crop overflow */
-    object-position: center; /* center the crop */
-    display: block;
+.image-container h1 {
+    position: absolute;
+    bottom: 120px;
+    right: 80px; 
+    font-size: 5rem;
+    color: var(--bg-color);
 }
 
 .shop-button {
@@ -183,10 +200,10 @@ nav a:hover {
 /* Products Landing Page */
 .product-section {
     text-align: center;
-    padding: 50px 20px;
+    padding: 20px 20px;
     background-color: #f3f1ec; 
     font-family: 'Arial', sans-serif;
-    scroll-margin-top: 80px; /* Prevents sticky header from covering title */
+    scroll-margin-top: 120px; /* Prevents sticky header from covering title */
 }
 
 .section-title {
@@ -216,6 +233,7 @@ nav a:hover {
 
 .product-image {
     background-color: #e9e9e9; 
+    width: 100%;
     height: 140px;
     display: flex;
     justify-content: center;
@@ -224,7 +242,7 @@ nav a:hover {
 
 .product-image img {
     max-height: 90%;
-    max-width: 90%;
+    max-width: 100%;
     object-fit: contain;
 }
 
@@ -255,8 +273,9 @@ nav a:hover {
 .guarantee-section {
     background-color: #37965f; /* Solid green background from the design */
     color: white;              /* White text for the whole section */
+    margin-top: 50px;
     padding: 50px 20px;
-    scroll-margin-top: 80px;
+    scroll-margin-top: 100px;
 }
 
 .guarantee-section .section-title {
