@@ -1,8 +1,8 @@
 :root {
     --bg-color: #F3F0EA;
     --text-color: #2b3a1a;
-    --primary-color: #0F4C3A; /* Dark Olive Green */
-    --accent-color: #7ECF9A; /* Dark Sea Green */
+    --primary-color: #0F4C3A;
+    --accent-color: #7ECF9A;
     --card-bg: #ffffff;
     --border-color: #2b3a1a;
     --font-heading: 'Bebas Neue', cursive;
@@ -18,15 +18,14 @@
     --border-color: #8fbc8f;
 }
 
-/* --- Base Styling --- */
-* { /* Fixed typo here from '-' to '*' */
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth; /* Enables smooth scrolling for header links */
+    scroll-behavior: smooth; 
 }
 
 body {
@@ -42,12 +41,11 @@ h1, h2, h3 {
     letter-spacing: 2px;
 }
 
-/* --- Header & Navigation --- */
 header {
     background-color: var(--primary-color);
     color: var(--bg-color);
     padding: 1.5rem;
-    position: sticky; /* Optional polish: keeps nav at top while scrolling */
+    position: sticky; 
     top: 0;
     z-index: 1000;
 }
@@ -61,7 +59,6 @@ header {
     gap: 1rem;
 }
 
-/* --- Header --- */
 .header-controls {
     display: flex;
     align-items: center;
@@ -91,10 +88,10 @@ header h1 {
 }
 
 .image-container {
-    position: relative; /* Needed for absolute positioning inside */
-    width: 100%;       /* fixed rectangle width */
-    height: 60vh;      /* fixed viewport height */
-    overflow: hidden;   /* hide overflow parts */
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
     margin-bottom: 2rem;
     background: rgba(0, 0, 0, 0.3) url('matcha.jpg') left no-repeat;
     background-blend-mode: darken;
@@ -115,13 +112,13 @@ header h1 {
     right: 80px; 
     background-color: white;
     color: black;
-    padding: 14px 56px; /* Bigger size */
+    padding: 14px 56px;
     border: none;
     border-radius: 18px;
-    font-size: 20px; /* Bigger text */
+    font-size: 20px;
     cursor: pointer;
     transition: opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none; /* Polish for anchor tag styling */
+    text-decoration: none;
     font-family: var(--font-heading);
     letter-spacing: 1px;
 }
@@ -132,7 +129,6 @@ header h1 {
     color: white;
 }
 
-/* --- Header Buttons (Home, Products, etc.) --- */
 nav ul {
     list-style: none;
     display: flex;
@@ -157,7 +153,6 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* --- Buttons --- */
 .btn {
     background-color: var(--accent-color);
     color: #1a2211;
@@ -181,8 +176,6 @@ nav a:hover {
     margin-top: 1rem;
 }
 
-/* --- Main Layout & Sections --- */
-
 .card {
     max-width: 1500px;
     background-color: var(--card-bg);
@@ -197,13 +190,12 @@ nav a:hover {
     display: inline-block;
 }
 
-/* Products Landing Page */
 .product-section {
     text-align: center;
     padding: 20px 20px;
     background-color: #f3f1ec; 
     font-family: 'Arial', sans-serif;
-    scroll-margin-top: 120px; /* Prevents sticky header from covering title */
+    scroll-margin-top: 120px;
 }
 
 .section-title {
@@ -228,7 +220,7 @@ nav a:hover {
 }
 
 .product-card:hover {
-    transform: translateY(-5px); /* Polish hover effect */
+    transform: translateY(-5px);
 }
 
 .product-image {
@@ -246,9 +238,8 @@ nav a:hover {
     object-fit: contain;
 }
 
-/* The solid green text block */
 .product-info {
-    background-color: #4a8b5e; /* Match the shade of green */
+    background-color: #4a8b5e;
     color: white;
     padding: 15px 10px;
 }
@@ -269,10 +260,9 @@ nav a:hover {
     letter-spacing: 2px;
 }
 
-/* --- Guarantee Section (Green Banner) --- */
 .guarantee-section {
-    background-color: #37965f; /* Solid green background from the design */
-    color: white;              /* White text for the whole section */
+    background-color: #37965f; 
+    color: white;
     margin-top: 50px;
     padding: 50px 20px;
     scroll-margin-top: 100px;
@@ -286,21 +276,19 @@ nav a:hover {
     text-transform: uppercase;
 }
 
-/* --- About Section (Images & Lists) --- */
 .profile-pic {
-    width: 70px;               /* Scaled down from 150px to match the image proportions */
+    width: 70px;
     height: 70px;
-    border-radius: 50%;        /* Makes it circular */
-    object-fit: cover;         /* Ensures image fills without stretching */
-    object-position: center;   /* Centers the image */
-    border: none;              /* Removed border to match mockup */
+    border-radius: 50%;
+    object-fit: cover; 
+    object-position: center;
+    border: none;
     display: block;
-    margin: 0 auto 15px auto;  /* Centers the image horizontally in the column */
+    margin: 0 auto 15px auto;
 }
 
-/* --- ABOUT US SECTION (Beige Background) --- */
 .about-section {
-    background-color: #f3f1ec; /* Beige background */
+    background-color: #f3f1ec; 
     padding: 60px 20px;
     font-family: 'Arial', sans-serif;
     color: #333;
@@ -343,7 +331,7 @@ nav a:hover {
 .about-image {
     width: 100%;
     max-width: 350px;
-    border: 8px solid #37965f; /* Thick green border */
+    border: 8px solid #37965f;
     display: block;
 }
 
@@ -364,7 +352,7 @@ nav a:hover {
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 20px; /* Pill shape */
+    border-radius: 20px;
     font-weight: bold;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -376,9 +364,8 @@ nav a:hover {
     color: white;
 }
 
-/* --- FOOTER SECTION (Dark Green Background) --- */
 .site-footer {
-    background-color: #274e37; /* Dark green footer background */
+    background-color: #274e37; 
     color: white;
     padding: 50px 20px 20px 20px;
     font-family: 'Arial', sans-serif;
@@ -447,16 +434,15 @@ nav a:hover {
     font-size: 0.7rem;
 }
 
-/* --- Review Text Styling --- */
 .guarantee-section h3 {
     font-size: 1rem;
-    font-style: italic;        /* Italicized names */
+    font-style: italic;
     margin-bottom: 10px;
 }
 
 .guarantee-section p {
     font-size: 0.8rem;
-    text-transform: uppercase; /* Forces text to uppercase like the design */
+    text-transform: uppercase; 
     line-height: 1.4;
 }
 
@@ -469,7 +455,6 @@ nav a:hover {
     margin-bottom: 0.5rem;
 }
 
-/* --- Responsive Adjustments for Mobile --- */
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
